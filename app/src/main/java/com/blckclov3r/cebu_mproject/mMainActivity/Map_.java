@@ -46,6 +46,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.jeevandeshmukh.glidetoastlib.GlideToast;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
+import java.util.Formatter;
+
 import es.dmoral.toasty.Toasty;
 
 /**
@@ -588,13 +590,18 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
 
                 Location.distanceBetween(flat, flng, elat, elng, results);
 //                tDistance.setText("Distance: " + results[0] + "m");
+                StringBuilder builder = new StringBuilder();
+                StringBuilder builder2 = new StringBuilder();
+                Formatter fmt = new Formatter(builder);
+                Formatter fmt2 = new Formatter(builder2);
+                fmt.format("Distance: %.2f",results[0]);
+//                Log.d(COMMON_TAG,TAG+" distance: "+results[0]);
 
-                Log.d(COMMON_TAG,TAG+" distance: "+results[0]);
                 if (results[0] >= 1000) {
-                    results[0] = results[0] / 1000;
-                    tDistance.setText("Distance: " + results[0] + "km");
-                } else if (results[0] < 1000) {
-                    tDistance.setText("Distance: " + results[0] + "m");
+                    fmt2.format("Distance: %.2f",results[0]/1000);
+                    tDistance.setText("Distance: " + builder2.toString()+ "km");
+                } else{
+                    tDistance.setText("Distance: " + builder.toString() + "m");
                 }
                 return view;
             }

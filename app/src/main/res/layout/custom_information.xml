@@ -37,7 +37,7 @@
                 android:fontFamily="monospace"
                 android:text="locality"
                 android:textColor="@color/lightSalmon"
-                android:textSize="16sp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/tLatitude"
@@ -46,7 +46,7 @@
                 android:fontFamily="monospace"
                 android:text="Latitude"
                 android:textColor="@color/lightSalmon"
-                android:textSize="16sp" />
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/tLongitude"
@@ -55,7 +55,7 @@
                 android:fontFamily="monospace"
                 android:text="Longitude"
                 android:textColor="@color/lightSalmon"
-                android:textSize="16sp" />
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/tFare"
@@ -64,7 +64,7 @@
                 android:fontFamily="monospace"
                 android:text="Fare"
                 android:textColor="@color/lightSalmon"
-                android:textSize="16sp" />
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/tDistance"
@@ -73,7 +73,7 @@
                 android:fontFamily="monospace"
                 android:text="Distance"
                 android:textColor="@color/lightSalmon"
-                android:textSize="16sp" />
+                android:textSize="13dp" />
 
         </LinearLayout>
     </LinearLayout>
