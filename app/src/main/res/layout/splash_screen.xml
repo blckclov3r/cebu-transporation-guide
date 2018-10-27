@@ -36,7 +36,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:background="@color/whiteSmoke"
                         android:fontFamily="serif-monospace"
                         android:gravity="center"
@@ -50,7 +49,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="2dp"
                         android:background="@color/whiteSmoke"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal">
@@ -71,14 +69,15 @@
                     <LinearLayout
                         android:id="@+id/jeepLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="343dp"
-                        android:layout_marginTop="-10dp">
+                        android:layout_height="340dp"
+                        >
 
                         <ImageView
+                            android:background="#333"
                             android:id="@+id/jeepLogo"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/jeep_m" />
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/jeep_mm" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

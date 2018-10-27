@@ -58,6 +58,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
         LocationListener,
         GoogleMap.OnMarkerClickListener,
         GoogleMap.OnMarkerDragListener {
+
     private static final int REQUEST_LOCATION_CODE = 99;
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
@@ -104,6 +105,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             "Colonade Mall Colon Street",
             "SM City Cebu"
     };
+
     private String fare = "";
     private SearchableSpinner originSpinner, destinationSpinner;
     private ArrayAdapter<String> adapterStart;
@@ -207,81 +209,62 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
     }
 
 
+    private void returnPlaces(String x, String y) {
+        if (x == y) {
+            Toasty.error(getActivity(), "Unable to route, the same origin and destination", Toast.LENGTH_SHORT).show();
+            Log.d(COMMON_TAG,TAG+" Unable to route the same origin and destination");
+            return;
+        }else{
+            Log.d(COMMON_TAG,TAG+"Route √√√ +------------ CHECKING ----------+");
+        }
+    }
+
+    private void routePlaces(String origin,String destination,
+                              double fLatitude, double fLongitude,
+                             double lLatitude,double lLongitude) {
+        mapClear();
+        originSP = originSpinner.getSelectedItem().toString().trim();
+        destinationSP = destinationSpinner.getSelectedItem().toString().trim();
+        if(originSP.equals(origin) && destinationSP.equals(destination) ||
+                originSP.equals(destination) && destinationSP.equals(origin)){
+            dataTransfer = new Object[3];
+            singleton.setLatitude(fLatitude);
+            singleton.setLongitude(fLongitude);
+            singleton.setEnd_latitude(lLatitude);
+            singleton.setEnd_longitude(lLongitude);
+            url = getDirectionUrl();
+            setMarkerStart(origin, singleton.getLatitude(), singleton.getLongitude());
+            setMarkerEnd(destination, singleton.getEnd_latitude(), singleton.getEnd_longitude());
+            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
+            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
+            GetDirectionsData getDirectionsData = new GetDirectionsData();
+            dataTransfer[0] = singleton.getmMap();
+            dataTransfer[1] = url;
+            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
+            getDirectionsData.execute(dataTransfer);
+            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: "
+                    + singleton.getEnd_latitude() + ", end_lng: " + singleton.getEnd_longitude());
+            url = "";
+        }
+        singleton.setLatitude(0);
+        singleton.setLongitude(0);
+        singleton.setEnd_latitude(0);
+        singleton.setEnd_longitude(0);
+    }
+
     private void destinationRoute() {
+
         originSP = originSpinner.getSelectedItem().toString().trim();
         destinationSP = destinationSpinner.getSelectedItem().toString().trim();
         mapClear();
 
-        if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            Toasty.error(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue")) {
-            Toasty.error(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("Junquera Street, Cebu City") &&
-                destinationSP.equals("Junquera Street, Cebu City")) {
-            Toasty.error(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("Pardo, Cebu City") &&
-                destinationSP.equals("Pardo, Cebu City")) {
-            Toasty.error(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
-            Toasty.error(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("University of San Jose Recoletos")) {
-            Toasty.info(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (originSP.equals("South Bus Terminal, Cebu City") &&
-                destinationSP.equals("South Bus Terminal, Cebu City")) {
-            Toasty.info(getActivity(), "Unable to route, the same origin and destination",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
+        returnPlaces(originSP,destinationSP);
+
+        routePlaces("Saint Paul College, Cebu South Road", "Elizabeth Mall, Natalio B. Bacalso Avenue"
+                , 10.271950, 123.84819,10.298661 ,123.895093);
+
 
         if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
-                originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                        destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.271950);
-                    singleton.setLongitude(123.84819);
-                    singleton.setEnd_latitude(10.298474);
-                    singleton.setEnd_longitude(123.89459);
-                    url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Elizabeth Mall, Natalio B.", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
                 destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") ||
                 originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                         destinationSP.equals("Saint Paul College, Cebu South Road")) {
@@ -294,7 +277,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     singleton.setEnd_latitude(10.294125);
                     singleton.setEnd_longitude(123.88152);
                     url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road", singleton.getLatitude(), singleton.getLongitude());
+                    setMarkerStart("Saint Paul College, Cebu South Road",
+                            singleton.getLatitude(), singleton.getLongitude());
                     setMarkerEnd("CIT - University", singleton.getEnd_latitude(), singleton.getEnd_longitude());
                     LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
                     Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
@@ -307,7 +291,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+        }
+        if (originSP.equals("Saint Paul College, Cebu South Road") &&
                 destinationSP.equals("Junquera Street, Cebu City") ||
                 originSP.equals("Junquera Street, Cebu City") &&
                         destinationSP.equals("Saint Paul College, Cebu South Road")) {
@@ -334,7 +319,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+        }
+        if (originSP.equals("Saint Paul College, Cebu South Road") &&
                 destinationSP.equals("Pardo, Cebu City") ||
                 originSP.equals("Pardo, Cebu City") &&
                         destinationSP.equals("Saint Paul College, Cebu South Road")) {
@@ -363,7 +349,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                 originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                         destinationSP.equals("Cebu Institute of Technology - University, " +
@@ -391,7 +378,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("South Bus Terminal, Cebu City") ||
                 originSP.equals("South Bus Terminal, Cebu City") &&
                         destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")
@@ -420,7 +408,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                 }
             });
 
-        } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("Junquera Street, Cebu City") ||
                 originSP.equals("Junquera Street, Cebu City") &&
                         destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
@@ -447,7 +436,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("Pardo, Cebu City") ||
                 originSP.equals("Pardo, Cebu City") &&
                         destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
@@ -475,7 +465,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                 }
             });
 
-        } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("University of San Jose Recoletos") ||
                 originSP.equals("University of San Jose Recoletos") && destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
             new Handler().post(new Runnable() {
@@ -502,7 +493,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                 }
             });
 
-        } else if (originSP.equals("Junquera Street, Cebu City") &&
+        }
+        if (originSP.equals("Junquera Street, Cebu City") &&
                 destinationSP.equals("Pardo, Cebu City") ||
                 originSP.equals("Pardo, Cebu City") &&
                         destinationSP.equals("Junquera Street, Cebu City")) {
@@ -528,7 +520,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Junquera Street, Cebu City") &&
+        }
+        if (originSP.equals("Junquera Street, Cebu City") &&
                 destinationSP.equals("South Bus Terminal, Cebu City") ||
                 originSP.equals("South Bus Terminal, Cebu City") &&
                         destinationSP.equals("Junquera Street, Cebu City")) {
@@ -555,7 +548,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Junquera Street, Cebu City") &&
+        }
+        if (originSP.equals("Junquera Street, Cebu City") &&
                 destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                 originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                         destinationSP.equals("Junquera Street, Cebu City")) {
@@ -582,7 +576,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+        }
+        if (originSP.equals("Saint Paul College, Cebu South Road") &&
                 destinationSP.equals("South Bus Terminal, Cebu City") ||
                 originSP.equals("South Bus Terminal, Cebu City") &&
                         destinationSP.equals("Saint Paul College, Cebu South Road")) {
@@ -609,7 +604,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("Pardo, Cebu City") ||
                 originSP.equals("Pardo, Cebu City") &&
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue")) {
@@ -636,7 +632,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
+        }
+        if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                 destinationSP.equals("South Bus Terminal, Cebu City") ||
                 originSP.equals("South Bus Terminal, Cebu City") &&
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue")) {
@@ -663,7 +660,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Pardo, Cebu City") &&
+        }
+        if (originSP.equals("Pardo, Cebu City") &&
                 destinationSP.equals("South Bus Terminal, Cebu City") ||
                 originSP.equals("South Bus Terminal, Cebu City") &&
                         destinationSP.equals("Pardo, Cebu City")) {
@@ -690,51 +688,8 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     url = "";
                 }
             });
-        } else if (originSP.equals("Origin") && destinationSP.equals("Destination")
-                || originSP.equals("Destination") && destinationSP.equals("Origin")) {
-            if (opt_frag.isHybridState()) {
-                x += 1;
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toasty.info(getActivity(), "Unable to route, " +
-                                        "Please specify the places in origin and destination in order to locate",
-                                Toast.LENGTH_LONG).show();
-                        new GlideToast.makeToast(getActivity(), "Error, Unable to route", GlideToast.LENGTHTOOLONG, GlideToast.FAILTOAST).show();
-                    }
-                });
-                if (x >= 4) {
-                    x = 0;
-                    new Handler().post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toasty.info(getActivity(), "PM me on facebook: facebook.com/blckclov3r", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            } else {
-                x += 1;
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toasty.warning(getActivity(), "Unable to route, " +
-                                        "Please specify the places in origin and destination in order to locate",
-                                Toast.LENGTH_LONG).show();
-                        new GlideToast.makeToast(getActivity(), "Error, Unable to route",
-                                GlideToast.LENGTHTOOLONG, GlideToast.FAILTOAST).show();
-                    }
-                });
-                if (x >= 4) {
-                    x = 0;
-                    new Handler().post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toasty.info(getActivity(), "PM me on facebook: facebook.com/blckclov3r", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            }
-        } else if (originSP.equals("University of San Jose Recoletos") &&
+        }
+        if (originSP.equals("University of San Jose Recoletos") &&
                 destinationSP.equals("Saint Paul College, Cebu South Road") ||
                 originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("University of San Jose Recoletos")) {
@@ -839,23 +794,6 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             getDirectionsData.execute(dataTransfer);
             Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
                     + ", end_lng: " + singleton.getEnd_longitude());
-        } else {
-            if (x >= 4) {
-                x = 0;
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toasty.info(getActivity(), "PM me on facebook: facebook.com/blckclov3r", Toast.LENGTH_LONG).show();
-                        new GlideToast.makeToast(getActivity(), "There's something wrong :(",
-                                GlideToast.LENGTHTOOLONG, GlideToast.FAILTOAST).show();
-                    }
-                });
-            } else {
-                x++;
-                Toasty.error(getActivity(), "Error", Toast.LENGTH_LONG).show();
-                new GlideToast.makeToast(getActivity(), "Unable to get the direction",
-                        GlideToast.LENGTHTOOLONG, GlideToast.FAILTOAST).show();
-            }
         }
     }//eof destination method
 

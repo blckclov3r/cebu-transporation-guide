@@ -37,9 +37,12 @@ import java.util.ArrayList;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
 
-/**
+/*
  * Created by Abrenica, Aljun on 8/15/2018.
+ * Software Engineering Project
+ * Instructor: Stephanie Grace Villarubia
  */
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String COMMON_TAG = "abrenica_aljun";
@@ -64,7 +67,6 @@ public class MainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
                 WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
