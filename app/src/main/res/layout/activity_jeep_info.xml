@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:drawingCacheQuality="high"
+    android:alwaysDrawnWithCache="true"
+    android:background="@color/whiteSmoke"
+    android:persistentDrawingCache="all"
+    android:id="@+id/jeepInfoBackground"
+    android:fitsSystemWindows="true"
+    tools:context="com.blckclov3r.cebu_mproject.mRecyclerView.JeepInfo">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <LinearLayout
+        android:id="@+id/head_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/lightGray"
+        android:layout_marginTop="3dp"
+        android:padding="4dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_gravity="center"
+            android:src="@drawable/car_y" />
+
+        <in.codeshuffle.typewriterview.TypeWriterView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:fontFamily="monospace"
+            android:text="Jeep Routes Information"
+            android:textColor="@color/darkBlue"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/eBrain"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/head_"
+        android:layout_marginBottom="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:paddingBottom="10dp"
+            android:paddingTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/jeepTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="Jeep Code"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/one"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/jeepCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="Hello"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/jeepDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="None"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="4dp"
+        android:background="@color/darkBlue"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/java" />
+
+            <TextView
+                android:id="@+id/tvFooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="bottom"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="SoftEng Project"
+                android:textColor="@color/whiteSmoke"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFooter_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="2dp"
+            android:textSize="12dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="All Right Reserved 2018"
+            android:textColor="@color/whiteSmoke"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

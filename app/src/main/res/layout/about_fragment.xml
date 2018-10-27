@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/about_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:orientation="vertical"
+    android:persistentDrawingCache="all">
+
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/lightGray"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/question" />
+
+        <in.codeshuffle.typewriterview.TypeWriterView
+            android:id="@+id/app_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:fontFamily="monospace"
+            android:text="About this application"
+            android:textColor="@color/darkBlue"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="monospace"
+                        android:text="@string/lorem_ipsum"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/map_loc" />
+
+                <TextView
+                    android:id="@+id/tvDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="@string/about_one"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/two"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/diamond" />
+                    <TextView
+                        android:id="@+id/tvFeature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="monospace"
+                        android:text="Feature: "
+                        android:textColor="#006699"
+                        android:textSize="14dp"
+                         />
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvFeature_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="@string/about_feature"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/advantage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feature"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/success" />
+
+                    <TextView
+                        android:id="@+id/tvAdvantage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="monospace"
+                        android:gravity="center_vertical"
+                        android:text="Advantage"
+                        android:textColor="#006699"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvAdvantage_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="@string/advantage"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/disadvantage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/advantage"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/caution" />
+
+                    <TextView
+                        android:id="@+id/tvDisadvantage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="monospace"
+                        android:text="Disadvantage"
+                        android:textColor="#006699"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvDisadvantage_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="@string/disadvantage"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                   />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/aljun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/disadvantage"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/java" />
+
+                    <TextView
+                        android:id="@+id/tvFooter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:justificationMode="inter_word"
+                        android:text="SoftEng Project"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvFooter_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="All Right Reserved 2018"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

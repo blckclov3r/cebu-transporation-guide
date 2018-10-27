@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.FitWindowsLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/homeFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:alwaysDrawnWithCache="true"
+    android:drawingCacheQuality="high"
+    android:persistentDrawingCache="all">
+
+    <LinearLayout
+        android:id="@+id/head_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/lightGray"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/responsive" />
+
+        <in.codeshuffle.typewriterview.TypeWriterView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:fontFamily="monospace"
+            android:text="Welcome Screen"
+            android:textColor="@color/darkBlue"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/eBrain"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:layout_marginStart="5dp"
+                    android:text="Source Code"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                     />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/one"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/bitbucket" />
+
+                <TextView
+                    android:id="@+id/tv_home1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:justificationMode="inter_word"
+                    android:text="bitbucket.com/blckclov3r"
+                    android:textColor="@color/black"
+                    android:textIsSelectable="true"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/two"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="290dp"
+                    android:fitsSystemWindows="true"
+                    android:src="@drawable/jeepney_x" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/home_imageView"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_home2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus in mollis nunc sed id semper risus. Vitae elementum curabitur vitae nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus in mollis nunc sed id semper risus. Vitae elementum curabitur vitae nunc"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/coffee_x"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp" />
+                    <TextView
+                        android:id="@+id/bCoffee"
+                        android:text="Buy me coffee"
+                        android:fontFamily="monospace"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bitcoin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/three"
+                android:gravity="center"
+                android:layout_marginTop="-10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bitcoin" />
+
+                <TextView
+                    android:id="@+id/vc_bitcoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:gravity="center"
+                    android:fontFamily="serif-monospace"
+                    android:text="14yZm65KH8KT926qq1GTqja5rBoheqrbAU"
+                    android:textColor="@color/black"
+                    android:textIsSelectable="true"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/litecoin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bitcoin"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/litecoin" />
+
+                <TextView
+                    android:id="@+id/vc_litecoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:gravity="center"
+                    android:fontFamily="serif-monospace"
+                    android:text="LZJ9U2XXdh7JbBor55jZqqaP1yvyu8cN9z"
+                    android:textColor="@color/black"
+                    android:textIsSelectable="true"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ethereum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/litecoin"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ethereum" />
+
+                <TextView
+                    android:id="@+id/vc_ethereum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:gravity="center"
+                    android:text="0xcd067891f8eee538f58a2e7f17505e2385a625b0"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif-monospace"
+                    android:textIsSelectable="true"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ethereum"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="2dp"
+                        android:src="@drawable/java" />
+
+                    <TextView
+                        android:id="@+id/tv_home3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="monospace"
+                        android:text="SoftEng Project"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_home4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="All Right Reserved 2018"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.v7.widget.FitWindowsLinearLayout>

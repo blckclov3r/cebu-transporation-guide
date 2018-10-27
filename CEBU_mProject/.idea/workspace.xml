@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <devices>
+          <device id="pixel_xl" />
+        </devices>
+        <target>android-23</target>
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b6e13ab-e454-4193-9c1a-0d966854dc4c" name="Default" comment="" />
+    <ignored path="CEBU_mProject.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state />
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CEBU_mProject" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="C:\Users\admin\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="3.3" />
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="C:\Users\admin\Desktop\androidfolder\CEBU_mProject" value="4601488845973" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/jeep_info.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/map_fragment_activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/button_border.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/jeepinfo_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mRecyclerView/JeepInfo_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/night_map.json" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/map_dark.json" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mMisc/dbKey.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_directions.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mDatabase/DBHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/option_border.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mModel/Jeepcode.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mRecyclerView/JeepAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/transparent_btn.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mPlaces/GetDirectionsData.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/recycler_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mModel/Singleton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/jeep_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/jeep_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_jeep_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_information.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mRecyclerView/JeepInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/jeep_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/map_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/about_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/map_darkblue.json" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/alternate_trans_btn.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mMainActivity/Map_.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/option_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/option_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mMainActivity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/about_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mSplashscreen/SplashScreen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/home_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/home_fragment.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="-8" />
+    <option name="width" value="1318" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages AndroidView="true" />
+      <showMembers AndroidView="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="VectorAssetImportPath" value="C:\Users\admin" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
+    <property name="algorithm" value="Scalr" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="9885e635434d464738" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="format" value="PNG" />
+    <property name="lastFolderRoot" value="$PROJECT_DIR$/../../png/020-teacher-5.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../9.1.18 android/CEBU_mProject" />
+    <property name="method" value="Automatic" />
+    <property name="resolutions" value="LDPI&#10;XXHDPI&#10;MDPI&#10;XHDPI&#10;XXXHDPI&#10;HDPI" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="sourceResolution" value="XHDPI" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.blckclov3r.cebu_mproject.mRecyclerView" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\androidfolder\CEBU_mProject\app\src\main\res\drawable" />
+      <recent name="C:\Users\admin\Desktop\androidfolder\CEBU_mProject\app\src\main\res\drawable-v21" />
+      <recent name="C:\Users\admin\Desktop\androidfolder\CEBU_mProject\app\src\main\res\raw" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+      <method>
+        <option name="Make" enabled="false" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="raw in app" type="AndroidJUnit" factoryName="Android JUnit" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="raw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="raw" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+      <method>
+        <option name="Make" enabled="false" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="CEBU_mProject [signingReport]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android JUnit.raw in app" />
+      <item itemvalue="Gradle.CEBU_mProject [signingReport]" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b6e13ab-e454-4193-9c1a-0d966854dc4c" name="Default" comment="" />
+      <created>1532238032997</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532238032997</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="raw_in_app - 2018.08.21 at 19h 02m 06s.xml">
+      <configuration name="raw in app" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="raw_in_app - 2018.08.21 at 19h 05m 02s.xml">
+      <configuration name="raw in app" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="raw_in_app - 2018.08.21 at 19h 05m 22s.xml">
+      <configuration name="raw in app" configurationId="AndroidJUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="56" y="-8" width="1318" height="784" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.32854864" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5127186" side_tool="true" weight="0.50717705" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.32854864" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" x="90" y="397" width="1258" height="318" id="Terminal" order="8" sideWeight="0.4872814" weight="0.50717705" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.196875" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.24921875" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39872408" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Mirror" order="0" weight="0.32854864" />
+      <window_info anchor="right" id="Memory View" order="0" weight="0.3298887" />
+      <window_info anchor="bottom" id="Gradle Console" order="5" side_tool="true" weight="0.32854864" />
+      <window_info id="Build Variants" order="0" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Android Monitor" order="3" sideWeight="0.49046105" weight="0.47049442" />
+      <window_info id="Captures" order="2" weight="0.24960254" />
+      <window_info anchor="right" id="Dynamic Properties" order="10" />
+      <window_info anchor="right" id="Gradle" order="8" side_tool="true" weight="0.2344992" />
+      <window_info anchor="right" id="Preview" order="2" weight="0.33147854" />
+      <window_info anchor="right" x="156" y="92" width="1118" height="584" id="Documentation" order="7" side_tool="true" type="FLOATING" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Android Model" order="9" weight="0.3298887" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32854864" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.33492824" />
+      <window_info anchor="bottom" id="Message" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Mirror" order="0" weight="0.32854864" />
+      <window_info anchor="right" id="Memory View" order="0" weight="0.3298887" />
+      <window_info anchor="bottom" id="Gradle Console" order="5" side_tool="true" weight="0.32854864" />
+      <window_info id="Build Variants" order="0" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.32854864" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Android Monitor" order="3" sideWeight="0.49046105" weight="0.6395534" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Captures" order="3" weight="0.24960254" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Commander" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5127186" side_tool="true" weight="0.50717705" />
+      <window_info anchor="right" id="Preview" order="2" weight="0.27344993" />
+      <window_info anchor="right" x="156" y="92" width="1118" height="584" id="Documentation" order="7" side_tool="true" type="FLOATING" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="right" id="Android Model" order="9" weight="0.3298887" />
+      <window_info anchor="bottom" x="90" y="397" width="1258" height="318" id="Terminal" order="8" sideWeight="0.4872814" weight="0.50717705" />
+      <window_info anchor="right" id="Gradle" order="8" side_tool="true" weight="0.2344992" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22257552" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.33492824" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.32854864" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Dynamic Properties" order="10" />
+      <window_info id="Structure" order="6" weight="0.24960254" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32854864" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39872408" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="527" column="19" selection-start-line="527" selection-start-column="19" selection-end-line="527" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/cancel_x.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/car_x.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/coffee.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/cancel_y.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/jeepney_w.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/jeepney_a.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/_question.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/jeep_fragment.java" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="2237" column="16" selection-start-line="2237" selection-start-column="16" selection-end-line="2237" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/share.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/send.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/info.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/recycler_item.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/map_darkblue.json" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/about_fragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/transparent_btn.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/alternate_trans_btn.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/setting.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/setting__.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/question.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/question_mark.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/question_x.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/option_fragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mRecyclerView/JeepInfo.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mMainActivity/Map_.java" />
+    <entry file="file://$PROJECT_DIR$/app/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mMainActivity/MainActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mDatabase/DBHelper.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_jeep_info.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/about_fragment.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_information.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/jeep_fragment.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/jeep_item.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/map_fragment.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/option_fragment.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mSplashscreen/SplashScreen.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/home_fragment.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/blckclov3r/cebu_mproject/mFragment/home_fragment.java" />
+  </component>
+</project>

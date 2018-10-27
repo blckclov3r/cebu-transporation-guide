@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homepage"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_mapTest"
+            android:icon="@drawable/gps"
+            android:title="Map" />
+        <item
+            android:id="@+id/nav_jeep"
+            android:icon="@drawable/file"
+            android:title="Jeep Code"/>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/info"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/setting"
+            android:title="Setting"/>
+    </group>
+
+    <!--<item android:title="Misc.">-->
+    <!--<item android:title="">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_facebook"-->
+                <!--android:icon="@drawable/facebook"-->
+                <!--android:title="Facebook"/>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_messenger"-->
+                <!--android:icon="@drawable/messenger"-->
+                <!--android:title="Messenger"/>-->
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/share"
+                android:title="Share"/>
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

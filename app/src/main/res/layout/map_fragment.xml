@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animationCache="true"
+    android:persistentDrawingCache="all"
+    android:drawingCacheQuality="high"
+    android:alwaysDrawnWithCache="true"
+    android:keepScreenOn="true"
+    android:layout_height="match_parent">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+
+    <RelativeLayout
+        android:layout_marginTop="55dp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/originSpinner"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:layout_width="match_parent"
+                android:background="@drawable/transparent_btn"
+                android:layout_marginBottom="8dp"
+                android:layout_height="wrap_content" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/destinationSpinner"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:layout_width="match_parent"
+                android:background="@drawable/transparent_btn"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentStart="true">-->
+        <!--<com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
+            <!--android:id="@+id/jeepSpinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:background="@drawable/transparent_btn"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/jeepBtn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="38dp"-->
+            <!--android:layout_below="@id/jeepSpinner"-->
+            <!--android:background="@drawable/button_border"-->
+            <!--android:textSize="16sp"-->
+            <!--android:fontFamily="monospace"-->
+            <!--android:text="Jeep Route"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textStyle="bold" />-->
+    <!--</LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/locateBtn"
+            android:layout_width="132dp"
+            android:layout_height="36dp"
+            android:fontFamily="monospace"
+            android:text="Route"
+            android:textAllCaps="false"
+            android:textColor="#f3f3f3"
+            android:background="@drawable/transparent_btn"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="132dp"
+            android:fontFamily="monospace"
+            android:text="Reset"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:textColor="#f3f3f3"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:background="@drawable/transparent_btn"
+            android:layout_height="36dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

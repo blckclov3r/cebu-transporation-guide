@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/darkBlue"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:weightSum="1">
+
+    <ImageView
+        android:src="@drawable/jeep_zxc"
+        android:layout_width="match_parent"
+        android:alpha=".5"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Cebu Transportation Guide"
+            android:textColor="@color/whiteSmoke"
+            android:textSize="14dp" />
+
+        <TextView
+            android:text="Software Engineering Project"
+            android:gravity="center"
+            android:fontFamily="serif-monospace"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/whiteSmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif-monospace"
+            android:textColor="@color/whiteSmoke"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Version 1.0 Beta"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:text="Cebu Transportation Guide"-->
+    <!--android:gravity="center"-->
+    <!--android:textStyle="bold"-->
+    <!--android:textColor="@color/darkBlue"-->
+    <!--android:fontFamily="monospace"-->
+    <!--android:layout_height="wrap_content" />-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:text="TEST"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textColor="#fff"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="bitbucket.com/blckclov3r" />-->
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/customLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#333"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:paddingLeft="7dp"
+            android:src="@drawable/location_" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="7dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="1dp">
+
+            <TextView
+                android:id="@+id/tLocality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="locality"
+                android:textColor="@color/lightSalmon"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tLatitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Latitude"
+                android:textColor="@color/lightSalmon"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="monospace"
+                android:text="Longitude"
+                android:textColor="@color/lightSalmon"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tFare"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="monospace"
+                android:text="Fare"
+                android:textColor="@color/lightSalmon"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Distance"
+                android:textColor="@color/lightSalmon"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
