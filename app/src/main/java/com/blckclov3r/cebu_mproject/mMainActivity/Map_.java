@@ -80,15 +80,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             "Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
             "Pardo, Cebu City",
             "South Bus Terminal, Cebu City",
-            "University of San Jose Recoletos",
-            "College of Technologies Sciences",
-            "Salazar Colleges",
-            "Asian College of Technology, P. del Rosario Street",
-            "University of San Carlos (Main)",
-            "Super Metro Colon Corner Junquera Street",
-            "138 Mall Colon Street",
-            "Colonade Mall Colon Street",
-            "SM City Cebu"
+            "University of San Jose Recoletos"
     };
     private String end[] = {"Destination",
             "Saint Paul College, Cebu South Road",
@@ -97,15 +89,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             "Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
             "Pardo, Cebu City",
             "South Bus Terminal, Cebu City",
-            "University of San Jose Recoletos",
-            "College of Technologies Sciences",
-            "Salazar Colleges",
-            "Asian College of Technology, P. del Rosario Street",
-            "University of San Carlos (Main)",
-            "Super Metro Colon Corner Junquera Street",
-            "138 Mall Colon Street",
-            "Colonade Mall Colon Street",
-            "SM City Cebu"
+            "University of San Jose Recoletos"
     };
     private float results[] = new float[8];
     private String fare = "";
