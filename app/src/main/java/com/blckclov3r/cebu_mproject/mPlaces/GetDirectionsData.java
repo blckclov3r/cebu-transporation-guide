@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.blckclov3r.cebu_mproject.mModel.Singleton;
+import com.blckclov3r.cebu_mproject.mModel.mSingleton;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Dot;
@@ -39,7 +39,7 @@ public class GetDirectionsData extends AsyncTask<Object, String, String> {
     public static int count;
     @Override
     protected String doInBackground(Object... objects) {
-        Singleton.setmMap((GoogleMap) objects[0]);
+        mSingleton.setmMap((GoogleMap) objects[0]);
         url = (String) objects[1];
         latLng = (LatLng) objects[2];
         DownloadUrl downloadUrl = new DownloadUrl();
@@ -72,7 +72,7 @@ public class GetDirectionsData extends AsyncTask<Object, String, String> {
                 options.geodesic(true);
                 options.pattern(PATTERN_POLYGON_ALPHA);
                 options.addAll(PolyUtil.decode(directionsList[i]));
-                Singleton.getmMap().addPolyline(options);
+                mSingleton.getmMap().addPolyline(options);
         }
     }
 

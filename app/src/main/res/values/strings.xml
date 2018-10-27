@@ -3,7 +3,8 @@
     <string name="jeepney_code">Jeepney Code</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="google_map_API_key">AIzaSyDoWzA7Sa2sTwRJ91q-jw5XfOpW5bcRsvg</string>
+    <!--<string name="google_map_API_key">AIzaSyDoWzA7Sa2sTwRJ91q-jw5XfOpW5bcRsvg</string>-->
+    <string name="google_map_API_key">AIzaSyDyaHhnZ6MnmKlIvFcd4yAaWJMeXP0_6Ok</string>
     <string name="action_settings">Settings</string>
     <string name="about_one">This application use Google Maps API mapping services developed by Google, to allow users to find available direction and distance, for now the API currently we use does not contain ads, but googlestates in their terms of use that they reserve the right to display ads in the future.</string>
     <string name="about_feature">Convenient and comfortable experience w/ ease by showing direction between 2 places, distance, jeepney fare, current location via GPS and marker indicator.</string>

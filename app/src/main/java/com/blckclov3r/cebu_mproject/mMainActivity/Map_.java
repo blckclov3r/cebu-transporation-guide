@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
-import com.blckclov3r.cebu_mproject.mModel.Singleton;
+import com.blckclov3r.cebu_mproject.mModel.mSingleton;
 import com.blckclov3r.cebu_mproject.mPlaces.GetDirectionsData;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -66,7 +66,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
     private static final String COMMON_TAG = "abrenica_aljun";
     private static final int ZOOM = 13;
     private static int x = 0;
-    Singleton singleton;
+    mSingleton singleton;
     option_fragment opt_frag;
     LinearLayout customLayout;
     private String url = "";
@@ -105,7 +105,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             "Colonade Mall Colon Street",
             "SM City Cebu"
     };
-
+    private float results[] = new float[8];
     private String fare = "";
     private SearchableSpinner originSpinner, destinationSpinner;
     private ArrayAdapter<String> adapterStart;
@@ -117,7 +117,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
     private Button locateBtn, resetBtn;
     private long mLastClickTime = 0;
     private View view;
-
+    double flat ,flng,elat,elng;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -139,7 +139,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
         locateBtn = (Button) view.findViewById(R.id.locateBtn);
         originSpinner = (SearchableSpinner) view.findViewById(R.id.originSpinner);
         destinationSpinner = (SearchableSpinner) view.findViewById(R.id.destinationSpinner);
-        singleton = Singleton.getInstance();
+        singleton = mSingleton.getInstance();
         resetBtn = (Button) view.findViewById(R.id.resetBtn);
         opt_frag = new option_fragment();
         adapterStart = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, start);
@@ -219,10 +219,11 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
         }
     }
 
+
     private void routePlaces(String origin,String destination,
                               double fLatitude, double fLongitude,
                              double lLatitude,double lLongitude) {
-        mapClear();
+
         originSP = originSpinner.getSelectedItem().toString().trim();
         destinationSP = destinationSpinner.getSelectedItem().toString().trim();
         if(originSP.equals(origin) && destinationSP.equals(destination) ||
@@ -232,569 +233,93 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             singleton.setLongitude(fLongitude);
             singleton.setEnd_latitude(lLatitude);
             singleton.setEnd_longitude(lLongitude);
+
+            flat = singleton.getLatitude();
+            flng = singleton.getLongitude();
+            elat = singleton.getEnd_latitude();
+            elng = singleton.getEnd_longitude();
+
             url = getDirectionUrl();
             setMarkerStart(origin, singleton.getLatitude(), singleton.getLongitude());
             setMarkerEnd(destination, singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
             Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
             GetDirectionsData getDirectionsData = new GetDirectionsData();
             dataTransfer[0] = singleton.getmMap();
             dataTransfer[1] = url;
             dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
             getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: "
-                    + singleton.getEnd_latitude() + ", end_lng: " + singleton.getEnd_longitude());
+            LatLngZoom(singleton.getEnd_latitude(), singleton.getEnd_longitude(), ZOOM);
+
+
             url = "";
         }
-        singleton.setLatitude(0);
-        singleton.setLongitude(0);
-        singleton.setEnd_latitude(0);
-        singleton.setEnd_longitude(0);
     }
 
     private void destinationRoute() {
-
+        mapClear();
         originSP = originSpinner.getSelectedItem().toString().trim();
         destinationSP = destinationSpinner.getSelectedItem().toString().trim();
         mapClear();
-
         returnPlaces(originSP,destinationSP);
-
         routePlaces("Saint Paul College, Cebu South Road", "Elizabeth Mall, Natalio B. Bacalso Avenue"
                 , 10.271950, 123.84819,10.298661 ,123.895093);
-
-
-        if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") ||
-                originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                        destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.271950);
-                    singleton.setLongitude(123.84819);
-                    singleton.setEnd_latitude(10.294125);
-                    singleton.setEnd_longitude(123.88152);
-                    url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road",
-                            singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("CIT - University", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("Junquera Street, Cebu City") ||
-                originSP.equals("Junquera Street, Cebu City") &&
-                        destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.271950);
-                    singleton.setLongitude(123.84819);
-                    singleton.setEnd_latitude(10.300172);
-                    singleton.setEnd_longitude(123.89918);
-                    url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Junquera Street, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("Pardo, Cebu City") ||
-                originSP.equals("Pardo, Cebu City") &&
-                        destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.271950);
-                    singleton.setLongitude(123.84819);
-                    singleton.setEnd_latitude(10.279425);
-                    singleton.setEnd_longitude(123.85522);
-                    url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road", singleton.getLatitude(),
-                            singleton.getLongitude());
-                    setMarkerEnd("Pardo, Cebu City", singleton.getEnd_latitude(),
-                            singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
-                originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                        destinationSP.equals("Cebu Institute of Technology - University, " +
-                                "Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.294125);
-                    singleton.setLongitude(123.88152);
-                    singleton.setEnd_latitude(10.298661);
-                    singleton.setEnd_longitude(123.895093);
-                    url = getDirectionUrl();
-                    setMarkerStart("CIT - University", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Elizabeth Mall, Natalio B.", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")
-                ) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.294125);
-                    singleton.setLongitude(123.88152);
-                    singleton.setEnd_latitude(10.298367);
-                    singleton.setEnd_longitude(123.89301);
-                    url = getDirectionUrl();
-                    setMarkerStart("CIT - University", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() +
-                            ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Junquera Street, Cebu City") ||
-                originSP.equals("Junquera Street, Cebu City") &&
-                        destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.294125);
-                    singleton.setLongitude(123.88152);
-                    singleton.setEnd_latitude(10.300172);
-                    singleton.setEnd_longitude(123.89918);
-                    url = getDirectionUrl();
-                    setMarkerStart("CIT - University", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Junquera Street, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() +
-                            ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Pardo, Cebu City") ||
-                originSP.equals("Pardo, Cebu City") &&
-                        destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.294125);
-                    singleton.setLongitude(123.88152);
-                    singleton.setEnd_latitude(10.279425);
-                    singleton.setEnd_longitude(123.85522);
-                    url = getDirectionUrl();
-                    setMarkerStart("CIT - University", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Pardo, Cebu City, Cebu", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() + ", end_lng: "
-                            + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-
-        }
-        if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("University of San Jose Recoletos") ||
-                originSP.equals("University of San Jose Recoletos") && destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.294125);
-                    singleton.setLongitude(123.88152);
-                    singleton.setEnd_latitude(10.28737839);
-                    singleton.setEnd_longitude(123.86258379);
-                    url = getDirectionUrl();
-                    setMarkerStart("CIT - University", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("USJR", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() + ", end_lng: "
-                            + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-
-        }
-        if (originSP.equals("Junquera Street, Cebu City") &&
-                destinationSP.equals("Pardo, Cebu City") ||
-                originSP.equals("Pardo, Cebu City") &&
-                        destinationSP.equals("Junquera Street, Cebu City")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.300172);
-                    singleton.setLongitude(123.89918);
-                    singleton.setEnd_latitude(10.279425);
-                    singleton.setEnd_longitude(123.85522);
-                    url = getDirectionUrl();
-                    setMarkerStart("Junquera Street, Cebu City, Cebu", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Pardo, Cebu City, Cebu", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude() + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Junquera Street, Cebu City") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("Junquera Street, Cebu City")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.300172);
-                    singleton.setLongitude(123.89918);
-                    singleton.setEnd_latitude(10.298367);
-                    singleton.setEnd_longitude(123.89301);
-                    url = getDirectionUrl();
-                    setMarkerStart("Junquera Street, Cebu City, Cebu", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Junquera Street, Cebu City") &&
-                destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
-                originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                        destinationSP.equals("Junquera Street, Cebu City")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.300172);
-                    singleton.setLongitude(123.89918);
-                    singleton.setEnd_latitude(10.298661);
-                    singleton.setEnd_longitude(123.895093);
-                    url = getDirectionUrl();
-                    setMarkerStart("Junquera Street, Cebu City, Cebu", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Elizabeth Mall, Natalio B.", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("Saint Paul College, Cebu South Road")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.271950);
-                    singleton.setLongitude(123.84819);
-                    singleton.setEnd_latitude(10.298367);
-                    singleton.setEnd_longitude(123.89301);
-                    url = getDirectionUrl();
-                    setMarkerStart("Saint Paul College, Cebu South Road", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("Pardo, Cebu City") ||
-                originSP.equals("Pardo, Cebu City") &&
-                        destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.298661);
-                    singleton.setLongitude(123.895093);
-                    singleton.setEnd_latitude(10.279425);
-                    singleton.setEnd_longitude(123.85522);
-                    url = getDirectionUrl();
-                    setMarkerStart("Elizabeth Mall, Natalio B.", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("Pardo, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.298610706662352);
-                    singleton.setLongitude(123.894801735878);
-                    singleton.setEnd_latitude(10.298367);
-                    singleton.setEnd_longitude(123.89301);
-                    url = getDirectionUrl();
-                    setMarkerStart("Elizabeth Mall, Natalio B.", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("Pardo, Cebu City") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("Pardo, Cebu City")) {
-            new Handler().post(new Runnable() {
-                @Override
-                public void run() {
-                    dataTransfer = new Object[3];
-                    singleton.setLatitude(10.279425);
-                    singleton.setLongitude(123.85522);
-                    singleton.setEnd_latitude(10.298367);
-                    singleton.setEnd_longitude(123.89301);
-                    url = getDirectionUrl();
-                    setMarkerStart("Pardo, Cebu City", singleton.getLatitude(), singleton.getLongitude());
-                    setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-                    Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-                    GetDirectionsData getDirectionsData = new GetDirectionsData();
-                    dataTransfer[0] = singleton.getmMap();
-                    dataTransfer[1] = url;
-                    dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-                    getDirectionsData.execute(dataTransfer);
-                    Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                            + ", end_lng: " + singleton.getEnd_longitude());
-                    url = "";
-                }
-            });
-        }
-        if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("Saint Paul College, Cebu South Road") ||
-                originSP.equals("Saint Paul College, Cebu South Road") &&
-                        destinationSP.equals("University of San Jose Recoletos")) {
-            dataTransfer = new Object[3];
-            singleton.setLatitude(10.28737839);
-            singleton.setLongitude(123.86258379);
-            singleton.setEnd_latitude(10.27243391);
-            singleton.setEnd_longitude(123.84810926);
-            url = getDirectionUrl();
-            setMarkerStart("USJR", singleton.getLatitude(), singleton.getLongitude());
-            setMarkerEnd("Saint Paul College", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-            GetDirectionsData getDirectionsData = new GetDirectionsData();
-            dataTransfer[0] = singleton.getmMap();
-            dataTransfer[1] = url;
-            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                    + ", end_lng: " + singleton.getEnd_longitude());
-        } else if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
-                originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
-                        destinationSP.equals("University of San Jose Recoletos")) {
-            dataTransfer = new Object[3];
-            singleton.setLatitude(10.28737839);
-            singleton.setLongitude(123.86258379);
-            singleton.setEnd_latitude(10.298661);
-            singleton.setEnd_longitude(123.895093);
-            url = getDirectionUrl();
-            setMarkerStart("USJR", singleton.getLatitude(), singleton.getLongitude());
-            setMarkerEnd("Saint Paul College", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-            GetDirectionsData getDirectionsData = new GetDirectionsData();
-            dataTransfer[0] = singleton.getmMap();
-            dataTransfer[1] = url;
-            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                    + ", end_lng: " + singleton.getEnd_longitude());
-        } else if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("Junquera Street, Cebu City") ||
-                originSP.equals("Junquera Street, Cebu City") &&
-                        destinationSP.equals("University of San Jose Recoletos")) {
-            dataTransfer = new Object[3];
-            singleton.setLatitude(10.28737839);
-            singleton.setLongitude(123.86258379);
-            singleton.setEnd_latitude(10.300172);
-            singleton.setEnd_longitude(123.89918);
-            url = getDirectionUrl();
-            setMarkerStart("USJR", singleton.getLatitude(), singleton.getLongitude());
-            setMarkerEnd("Junquera Street, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-            GetDirectionsData getDirectionsData = new GetDirectionsData();
-            dataTransfer[0] = singleton.getmMap();
-            dataTransfer[1] = url;
-            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                    + ", end_lng: " + singleton.getEnd_longitude());
-        } else if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("Pardo, Cebu City") ||
-                originSP.equals("Pardo, Cebu City") &&
-                        destinationSP.equals("University of San Jose Recoletos")) {
-            dataTransfer = new Object[3];
-            singleton.setLatitude(10.28737839);
-            singleton.setLongitude(123.86258379);
-            singleton.setEnd_latitude(10.27941145);
-            singleton.setEnd_longitude(123.85521825);
-            url = getDirectionUrl();
-            setMarkerStart("USJR", singleton.getLatitude(), singleton.getLongitude());
-            setMarkerEnd("Pardo, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-            GetDirectionsData getDirectionsData = new GetDirectionsData();
-            dataTransfer[0] = singleton.getmMap();
-            dataTransfer[1] = url;
-            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                    + ", end_lng: " + singleton.getEnd_longitude());
-        } else if (originSP.equals("University of San Jose Recoletos") &&
-                destinationSP.equals("South Bus Terminal, Cebu City") ||
-                originSP.equals("South Bus Terminal, Cebu City") &&
-                        destinationSP.equals("University of San Jose Recoletos")) {
-            dataTransfer = new Object[3];
-            singleton.setLatitude(10.28737839);
-            singleton.setLongitude(123.86258379);
-            singleton.setEnd_latitude(10.298367);
-            singleton.setEnd_longitude(123.89301);
-            url = getDirectionUrl();
-            setMarkerStart("USJR", singleton.getLatitude(), singleton.getLongitude());
-            setMarkerEnd("South Bus Terminal, Cebu City", singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            LatLngZoom(singleton.getLatitude(), singleton.getLongitude(), ZOOM);
-            Log.d(COMMON_TAG, TAG + " getDirectionUrl(): url: " + url);
-            GetDirectionsData getDirectionsData = new GetDirectionsData();
-            dataTransfer[0] = singleton.getmMap();
-            dataTransfer[1] = url;
-            dataTransfer[2] = new LatLng(singleton.getEnd_latitude(), singleton.getEnd_longitude());
-            getDirectionsData.execute(dataTransfer);
-            Log.d(COMMON_TAG, TAG + " toBtn: end_lat: " + singleton.getEnd_latitude()
-                    + ", end_lng: " + singleton.getEnd_longitude());
-        }
+        routePlaces("Saint Paul College, Cebu South Road", "Cebu Institute of Technology - University, Natalio B. Bacalso Avenue"
+                , 10.271950, 123.84819,10.294125 ,123.88152);
+        routePlaces("Saint Paul College, Cebu South Road", "Junquera Street, Cebu City"
+                , 10.271950, 123.84819,10.300172 ,123.89918);
+        routePlaces("Saint Paul College, Cebu South Road", "Pardo, Cebu City"
+                , 10.271950, 123.84819,10.279425 ,123.85522);
+        routePlaces("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
+                "Elizabeth Mall, Natalio B. Bacalso Avenue"
+                , 10.294125, 123.88152,10.298661 ,123.895093);
+        routePlaces("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
+                "South Bus Terminal, Cebu City"
+                , 10.294125, 123.88152,10.298367 ,123.89301);
+        routePlaces("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
+                "Junquera Street, Cebu City"
+                , 10.294125, 123.88152,10.300172 ,123.89918);
+        routePlaces("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
+                "Pardo, Cebu City"
+                , 10.294125, 123.88152,10.279425 ,123.85522);
+        routePlaces("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue",
+                "University of San Jose Recoletos"
+                , 10.294125, 123.88152,10.28737839 ,123.86258379);
+        routePlaces("Junquera Street, Cebu City",
+                "Pardo, Cebu City"
+                , 10.300172, 123.89918,10.279425 ,123.85522);
+        routePlaces("Junquera Street, Cebu City",
+                "South Bus Terminal, Cebu City"
+                , 10.300172, 123.89918,10.298367 ,123.89301);
+        routePlaces("Junquera Street, Cebu City",
+                "Elizabeth Mall, Natalio B. Bacalso Avenue"
+                , 10.300172, 123.89918,10.298661 ,123.895093);
+        routePlaces("Saint Paul College, Cebu South Road",
+                "South Bus Terminal, Cebu City"
+                , 10.271950, 123.84819,10.298367 ,123.89301);
+        routePlaces("Elizabeth Mall, Natalio B. Bacalso Avenue",
+                "Pardo, Cebu City"
+                , 10.298661, 123.895093,10.279425 ,123.85522);
+        routePlaces("Elizabeth Mall, Natalio B. Bacalso Avenue",
+                "South Bus Terminal, Cebu City"
+                , 10.298610706662352, 123.894801735878,10.298367 ,123.89301);
+        routePlaces("Pardo, Cebu City",
+                "South Bus Terminal, Cebu City"
+                , 10.279425, 123.85522,10.298367 ,123.89301);
+        routePlaces("University of San Jose Recoletos",
+                "Saint Paul College, Cebu South Road"
+                , 10.28737839, 123.86258379,10.27243391 ,123.84810926);
+        routePlaces("University of San Jose Recoletos",
+                "Elizabeth Mall, Natalio B. Bacalso Avenue"
+                , 10.28737839, 123.86258379,10.298661 ,123.895093);
+        routePlaces("University of San Jose Recoletos",
+                "Junquera Street, Cebu City"
+                , 10.28737839, 123.86258379,10.300172 ,123.89918);
+        routePlaces("University of San Jose Recoletos",
+                "Pardo, Cebu City"
+                , 10.28737839, 123.86258379,10.27941145 ,123.85521825);
+        routePlaces("University of San Jose Recoletos",
+                "South Bus Terminal, Cebu City"
+                , 10.28737839, 123.86258379,10.298367 ,123.89301);
     }//eof destination method
 
     private void mapClear() {
@@ -852,16 +377,16 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
         singleton.setLatitude(ll.latitude);
         singleton.setLongitude(ll.longitude);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(ll, zoom);
-        singleton.getmMap().getProjection().getVisibleRegion().latLngBounds.getCenter();
+//        singleton.getmMap().getProjection().getVisibleRegion().latLngBounds.getCenter();
         singleton.getmMap().animateCamera(cameraUpdate);
     }
 
     private String getDirectionUrl() {
         Log.d(COMMON_TAG, TAG + " getDirection Method is called");
-        StringBuilder googleDirectionsUrl = new StringBuilder(Singleton.getHttps());
+        StringBuilder googleDirectionsUrl = new StringBuilder(mSingleton.getHttps());
         googleDirectionsUrl.append("origin=" + singleton.getLatitude() + "," + singleton.getLongitude());
         googleDirectionsUrl.append("&destination=" + singleton.getEnd_latitude() + "," + singleton.getEnd_longitude());
-        googleDirectionsUrl.append("&key=" + Singleton.getKey());
+        googleDirectionsUrl.append("&key=" + mSingleton.getKey());
         googleDirectionsUrl.append("&sensor=true");
         return String.valueOf(googleDirectionsUrl);
     }
@@ -999,6 +524,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                 TextView tLongitude = (TextView) view.findViewById(R.id.tLongitude);
                 TextView tDistance = (TextView) view.findViewById(R.id.tDistance);
                 TextView tFare = (TextView) view.findViewById(R.id.tFare);
+
                 LatLng ll = marker.getPosition();
                 tLocality.setText(marker.getTitle());
                 tLatitude.setText("Latitude: " + String.valueOf(ll.latitude));
@@ -1014,54 +540,61 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     tFare.setTextColor(getResources().getColor(R.color.whiteSmoke));
                 }
 
-                float results[] = new float[8];
+
                 if (originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                         originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                                 destinationSP.equals("Saint Paul College, Cebu South Road")) {
                     tFare.setText("Jeep Fare: 8 php.");
-                } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+                }
+                else if (originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
                     tFare.setText("Jeep Fare: 7 php.");
-                } else if (originSP.equals("Junquera Street, Cebu City") &&
+                }
+                else if (originSP.equals("Junquera Street, Cebu City") &&
                         destinationSP.equals("Pardo, Cebu City")) {
                     tFare.setText("Jeep Fare: 8 php.");
-                } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+                }
+                else if (originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("South Bus Terminal, Cebu City")) {
                     tFare.setText("Jeep Fare: 8 php.");
-                } else if (originSP.equals("Saint Paul College, Cebu South Road") &&
+                }
+                else if (originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") ||
                         originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                                 destinationSP.equals("Saint Paul College, Cebu South Road")) {
                     tFare.setText("Jeep Fare: 7 php.");
-                } else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
+                }
+                else if (originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue") &&
                         destinationSP.equals("Junquera Street, Cebu City") ||
                         originSP.equals("Junquera Street, Cebu City") &&
                                 destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
                     tFare.setText("Jeep Fare: 8 php");
-                } else if (originSP.equals("University of San Jose Recoletos") &&
+                }
+                else if (originSP.equals("University of San Jose Recoletos") &&
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                         originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                                 destinationSP.equals("University of San Jose Recoletos")) {
                     tFare.setText("Jeep Fare: 8 php");
-                } else if (originSP.equals("University of San Jose Recoletos") &&
+                }
+                else if (originSP.equals("University of San Jose Recoletos") &&
                         destinationSP.equals("Junquera Street, Cebu City") ||
                         originSP.equals("Junquera Street, Cebu City") &&
                                 destinationSP.equals("University of San Jose Recoletos")) {
                     tFare.setText("Jeep Fare: 8 php");
-                } else {
+                }else{
                     tFare.setText("Jeep Fare: 7 php");
                 }
 
-                Location.distanceBetween(singleton.getLatitude(), singleton.getLongitude(),
-                        singleton.getEnd_latitude(), singleton.getEnd_longitude(), results);
+                Location.distanceBetween(flat, flng, elat, elng, results);
 //                tDistance.setText("Distance: " + results[0] + "m");
-                float km = results[0];
-                if (km >= 1000) {
-                    km = km / 1000;
-                    tDistance.setText("Distance: " + km + "km");
-                } else if (km < 1000) {
-                    tDistance.setText("Distance: " + km + "m");
+
+                Log.d(COMMON_TAG,TAG+" distance: "+results[0]);
+                if (results[0] >= 1000) {
+                    results[0] = results[0] / 1000;
+                    tDistance.setText("Distance: " + results[0] + "km");
+                } else if (results[0] < 1000) {
+                    tDistance.setText("Distance: " + results[0] + "m");
                 }
                 return view;
             }

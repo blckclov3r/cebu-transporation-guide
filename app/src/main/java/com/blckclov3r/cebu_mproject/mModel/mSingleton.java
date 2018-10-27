@@ -9,13 +9,13 @@ import com.google.android.gms.maps.model.Marker;
  * Created by Abrenica, Aljun on 8/15/2018.
  */
 
-public class Singleton {
+public class mSingleton {
 
-    private static final String TAG = Singleton.class.getSimpleName();
+    private static final String TAG = mSingleton.class.getSimpleName();
     private static final String COMMON_TAG = "abrenica_aljun";
     private static final String KEY = "AIzaSyDoWzA7Sa2sTwRJ91q-jw5XfOpW5bcRsvg";
     private static final String HTTPS = "https://maps.googleapis.com/maps/api/directions/json?";
-    static Singleton obj;
+    static mSingleton obj;
     private static double latitude = 0.0;
     private static double longitude = 0.0;
     private static double end_latitude = 0.0;
@@ -25,7 +25,7 @@ public class Singleton {
     private static Marker mLocationMarker;
     private static GoogleMap mMap;
 
-    private Singleton() {
+    private mSingleton() {
         Log.d(COMMON_TAG, TAG + " Singleton constructor: Instance created");
     }
 
@@ -42,14 +42,14 @@ public class Singleton {
     }
 
     public static void setmLocationMarker(Marker mLocationMarker) {
-        Singleton.mLocationMarker = mLocationMarker;
+        mSingleton.mLocationMarker = mLocationMarker;
     }
 
-    public static Singleton getInstance() {
+    public static mSingleton getInstance() {
         if (obj == null) {
-            synchronized (Singleton.class) {
+            synchronized (mSingleton.class) {
                 if (obj == null) {
-                    obj = new Singleton();
+                    obj = new mSingleton();
                 }
             }
         }
@@ -62,7 +62,7 @@ public class Singleton {
     }
 
     public static void setmMap(GoogleMap mMap) {
-        Singleton.mMap = mMap;
+        mSingleton.mMap = mMap;
     }
 
     public static double getCebu_lat() {
@@ -78,7 +78,7 @@ public class Singleton {
     }
 
     public static void setEnd_latitude(double end_latitude) {
-        Singleton.end_latitude = end_latitude;
+        mSingleton.end_latitude = end_latitude;
     }
 
     public static double getEnd_longitude() {
@@ -86,7 +86,7 @@ public class Singleton {
     }
 
     public static void setEnd_longitude(double end_longitude) {
-        Singleton.end_longitude = end_longitude;
+        mSingleton.end_longitude = end_longitude;
     }
 
     public static double getLatitude() {
@@ -94,7 +94,7 @@ public class Singleton {
     }
 
     public static void setLatitude(double latitude) {
-        Singleton.latitude = latitude;
+        mSingleton.latitude = latitude;
     }
 
     public static double getLongitude() {
@@ -102,6 +102,6 @@ public class Singleton {
     }
 
     public static void setLongitude(double longitude) {
-        Singleton.longitude = longitude;
+        mSingleton.longitude = longitude;
     }
 }
