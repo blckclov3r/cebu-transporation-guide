@@ -14,7 +14,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.blckclov3r.cebu_mproject.R;
+import com.blckclov3r.cebu_mproject.mFragment.jeep_fragment;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
+import com.blckclov3r.cebu_mproject.mMainActivity.MainActivity;
 import com.fujiyuu75.sequent.Animation;
 import com.fujiyuu75.sequent.Sequent;
 
@@ -79,11 +81,12 @@ public class JeepInfo extends AppCompatActivity {
 
         tv_title = (TypeWriterView) findViewById(R.id.tv_title);
 
-        Intent intent = getIntent();
-        final String code = intent.getStringExtra("code");
-        final String desc = intent.getStringExtra("desc");
-        jeepCode.setText(code);
-        jeepDesc.setText(desc);
+//        Intent intent = getIntent();
+//        final String code = intent.getStringExtra("code");
+//        final String desc = intent.getStringExtra("desc");
+        jeepCode.setText(MainActivity.code);
+        jeepDesc.setText(MainActivity.desc);
+
         sharedPreferences = getApplicationContext().getSharedPreferences(option_fragment.MY_PREF,MODE_PRIVATE);
         getBackgroundTheme();
 
@@ -99,15 +102,6 @@ public class JeepInfo extends AppCompatActivity {
                         delay(500).start();
             }
         });
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-//                new GlideToast.makeToast(JeepInfo.this,"Jeepney code: "+code,
-//                        GlideToast.LENGTHTOOLONG, GlideToast.INFOTOAST).show();
-                Toasty.info(getApplicationContext(),"Jeepney code: "+code+"",Toast.LENGTH_LONG).show();
-            }
-        },300);
 
     }
     public void getBackgroundTheme(){
@@ -133,4 +127,6 @@ public class JeepInfo extends AppCompatActivity {
         super.onBackPressed();
         Bungee.slideDown(JeepInfo.this);
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.blckclov3r.cebu_mproject.mFragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -30,7 +31,7 @@ import spencerstudios.com.bungeelib.Bungee;
 import static android.content.Context.MODE_PRIVATE;
 
 /**
- * Created by admin on 8/10/2018.
+ * Abrenica, Aljun
  */
 
 public class jeep_fragment extends Fragment {
@@ -91,13 +92,29 @@ public class jeep_fragment extends Fragment {
                     }while (cursor.moveToNext());
                 }
                 cursor.close();
+                listener.sendInfo(jcode,jdesc);
                 Intent intent = new Intent(getActivity(),JeepInfo.class);
-                intent.putExtra("code",jcode);
-                intent.putExtra("desc",jdesc);
+//                intent.putExtra("code",jcode);
+//                intent.putExtra("desc",jdesc);
                 getActivity().startActivity(intent);
                 Bungee.slideUp(getActivity());
             }
         });
     }
 
+
+    public interface mListener{
+        public void sendInfo(String code,String desc);
+    }
+    private mListener listener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            listener = (mListener) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException(e.toString()+" must implements mListener");
+        }
+    }
 }

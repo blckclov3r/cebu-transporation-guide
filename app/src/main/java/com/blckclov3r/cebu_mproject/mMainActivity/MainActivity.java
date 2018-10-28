@@ -38,13 +38,13 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
 
 /*
- * Created by Abrenica, Aljun on 8/15/2018.
+ * Created by Abrenica, Aljun
  * Software Engineering Project
  * Instructor: Stephanie Grace Villarubia
  */
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,jeep_fragment.mListener {
     private static final String COMMON_TAG = "abrenica_aljun";
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int ERROR_DIALOG_REQUEST = 9001;
@@ -2443,7 +2443,8 @@ public class MainActivity extends AppCompatActivity
                 "- USC(talamban) \n" +
                 "- Talamban \n" +
                 "- Bacayan \n" +
-                "- Pit-os", "Pit-os to Carbon | Carbon to Pit-os"));
+                "- Pit-os",
+                "Pit-os to Carbon | Carbon to Pit-os"));
         dbHelper.jeepCodeData(new Jeepcode("MI-01A", "* Punta Engano to Opon Public Market\n" +
                 "- Punta Engano \n" +
                 "- Mactan Shrine \n" +
@@ -2467,7 +2468,9 @@ public class MainActivity extends AppCompatActivity
                 "- Ibo \n" +
                 "- Mactan Shrine \n" +
                 "- Shangrila Hotel \n" +
-                "- Punta Engano", "Punta Engano to Opon Public Market | Opon Public Market to Punta Engano"));
+                "- Punta Engano",
+                "Punta Engano to Opon Public Market " +
+                        "| Opon Public Market to Punta Engano"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-02B", "* Mandaue to Maribago\n" +
                 "- (Mandaue) Parkmall \n" +
@@ -2537,7 +2540,8 @@ public class MainActivity extends AppCompatActivity
                 "- CD. Seno St. \n" +
                 "- Hall of Justice \n" +
                 "- WO. Seno St. \n" +
-                "- Parkmall", "Mandaue to Maribago | Maribago to Mandaue"));
+                "- Parkmall",
+                "Mandaue to Maribago | Maribago to Mandaue"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-03A", "* Cordova to Opon Public Market \n" +
                 "- Cordova \n" +
@@ -2563,7 +2567,8 @@ public class MainActivity extends AppCompatActivity
                 "- Babag 1 \n" +
                 "- Deca Homes \n" +
                 "- Babag 2 \n" +
-                "- Cordova", "Cordova to Opon Public Market | Opon Public Market to Cordova"));
+                "- Cordova",
+                "Cordova to Opon Public Market | Opon Public Market to Cordova"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-03B", "* Cordova to Mepz 1 via Opon Public Market\n" +
                 "- Cordova \n" +
@@ -2633,7 +2638,8 @@ public class MainActivity extends AppCompatActivity
                 "- Babab 1 \n" +
                 "- Deca Homes \n" +
                 "- Babag 2 \n" +
-                "- Cordova", "Cordova to Mepz 1 via Opon Public Market " +
+                "- Cordova",
+                "Cordova to Mepz 1 via Opon Public Market " +
                 "| Mepz 1 to Cordova via Mactan Ferry Terminal"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-04B", "* Tamiya to Mepz 1\n" +
@@ -2710,7 +2716,8 @@ public class MainActivity extends AppCompatActivity
                 "- A.C. Cortes Ave. \n" +
                 "- Prince Warehouse Club (mandaue) \n" +
                 "- B.b. Cabahug St. \n" +
-                "- A. del Rosario St.", "Mandaue (parkmall) to Tamiya Terminal | Tamiya Terminal to Mandaue (parkmall)"));
+                "- A. del Rosario St.",
+                "Mandaue (parkmall) to Tamiya Terminal | Tamiya Terminal to Mandaue (parkmall)"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-05A", "* Mactan Airport \n" +
                 "- Marina Mall \n" +
@@ -2740,7 +2747,8 @@ public class MainActivity extends AppCompatActivity
                 "- Lapulapu City Hall \n" +
                 "- Pusok \n" +
                 "- Marina Mall \n" +
-                "- Mactan Cebu International Airport Authority", "Mactan airport to Opon (Muelle osmena ferry boat terminal) | Opon to Mactan Airport"));
+                "- Mactan Cebu International Airport Authority",
+                "Mactan airport to Opon (Muelle osmena ferry boat terminal) | Opon to Mactan Airport"));
 
         dbHelper.jeepCodeData(new Jeepcode("MI-23A", "* Opon to Mandaue\n" +
                 "- Opon PUJ terminal \n" +
@@ -2784,7 +2792,16 @@ public class MainActivity extends AppCompatActivity
                 "- Ompad St. \n" +
                 "- GY dela Serna St. \n" +
                 "- La Nueva Supermart \n" +
-                "- Opon PUJ terminal \n MI-23A also named as 23D", "Opon to Mandaue | Mandaue to Opon"));
+                "- Opon PUJ terminal \n MI-23A also named as 23D",
+                "Opon to Mandaue | Mandaue to Opon"));
     }
 
+    //forbidden interface technique by: acinerba nujla = aljun abrenica :D
+    public static String code;
+    public static String desc;
+    @Override
+    public void sendInfo(String code, String desc) {
+        this.code = code;
+        this.desc = desc;
+    }
 }
