@@ -1,5 +1,4 @@
 package com.blckclov3r.cebu_mproject.mMainActivity;
-
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -22,7 +21,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
 import com.blckclov3r.cebu_mproject.mModel.mSingleton;
@@ -43,15 +41,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.jeevandeshmukh.glidetoastlib.GlideToast;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
-
 import java.util.Formatter;
-
 import es.dmoral.toasty.Toasty;
 
 /**
- * Created by Abrenica, Aljun on 8/15/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class Map_ extends Fragment implements OnMapReadyCallback,
@@ -219,12 +214,10 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
             singleton.setLongitude(fLongitude);
             singleton.setEnd_latitude(lLatitude);
             singleton.setEnd_longitude(lLongitude);
-
             flat = singleton.getLatitude();
             flng = singleton.getLongitude();
             elat = singleton.getEnd_latitude();
             elng = singleton.getEnd_longitude();
-
             url = getDirectionUrl();
             setMarkerStart(origin, singleton.getLatitude(), singleton.getLongitude());
             setMarkerEnd(destination, singleton.getEnd_latitude(), singleton.getEnd_longitude());
@@ -510,12 +503,10 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                 TextView tLongitude = (TextView) view.findViewById(R.id.tLongitude);
                 TextView tDistance = (TextView) view.findViewById(R.id.tDistance);
                 TextView tFare = (TextView) view.findViewById(R.id.tFare);
-
                 LatLng ll = marker.getPosition();
                 tLocality.setText(marker.getTitle());
                 tLatitude.setText("Latitude: " + String.valueOf(ll.latitude));
                 tLongitude.setText("Longitude: " + String.valueOf(ll.longitude));
-
                 if (opt_frag.isHybridState()) {
                     customLayout = (LinearLayout) view.findViewById(R.id.customLayout);
                     customLayout.setBackgroundColor(getResources().getColor(R.color.darkBlue));
@@ -525,24 +516,33 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                     tDistance.setTextColor(getResources().getColor(R.color.whiteSmoke));
                     tFare.setTextColor(getResources().getColor(R.color.whiteSmoke));
                 }
-
-
                 if (originSP.equals("Saint Paul College, Cebu South Road") &&
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                         originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                                 destinationSP.equals("Saint Paul College, Cebu South Road")) {
                     tFare.setText("Jeep Fare: 8 php.");
+                }else if(originSP.equals("Saint Paul College, Cebu South Road") &&
+                        destinationSP.equals("Junquera Street, Cebu City") ||
+                        originSP.equals("Junquera Street, Cebu City") &&
+                                destinationSP.equals("Saint Paul College, Cebu South Road")){
+                    tFare.setText("Jeep Fare: 9php.");
                 }
                 else if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                        destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
+                        destinationSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")
+                        || destinationSP.equals("Saint Paul College, Cebu South Road") &&
+                        originSP.equals("Cebu Institute of Technology - University, Natalio B. Bacalso Avenue")) {
                     tFare.setText("Jeep Fare: 7 php.");
                 }
                 else if (originSP.equals("Junquera Street, Cebu City") &&
-                        destinationSP.equals("Pardo, Cebu City")) {
+                        destinationSP.equals("Pardo, Cebu City") ||
+                        destinationSP.equals("Junquera Street, Cebu City")
+                                && originSP.equals("Pardo, Cebu City")) {
                     tFare.setText("Jeep Fare: 8 php.");
                 }
                 else if (originSP.equals("Saint Paul College, Cebu South Road") &&
-                        destinationSP.equals("South Bus Terminal, Cebu City")) {
+                        destinationSP.equals("South Bus Terminal, Cebu City") ||
+                        destinationSP.equals("Saint Paul College, Cebu South Road") &&
+                         originSP.equals("South Bus Terminal, Cebu City")) {
                     tFare.setText("Jeep Fare: 8 php.");
                 }
                 else if (originSP.equals("Saint Paul College, Cebu South Road") &&
@@ -561,7 +561,7 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
                         destinationSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") ||
                         originSP.equals("Elizabeth Mall, Natalio B. Bacalso Avenue") &&
                                 destinationSP.equals("University of San Jose Recoletos")) {
-                    tFare.setText("Jeep Fare: 8 php");
+                    tFare.setText("Jeep Fare: 7 php");
                 }
                 else if (originSP.equals("University of San Jose Recoletos") &&
                         destinationSP.equals("Junquera Street, Cebu City") ||
@@ -583,9 +583,9 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
 
                 if (results[0] >= 1000) {
                     fmt2.format("Distance: %.2f",results[0]/1000);
-                    tDistance.setText("Distance: " + builder2.toString()+ "km");
+                    tDistance.setText("" + builder2.toString()+ "km");
                 } else{
-                    tDistance.setText("Distance: " + builder.toString() + "m");
+                    tDistance.setText("" + builder.toString() + "m");
                 }
                 return view;
             }
