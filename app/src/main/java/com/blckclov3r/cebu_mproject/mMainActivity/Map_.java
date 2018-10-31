@@ -586,9 +586,9 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
 
                 if (results[0] >= 1000) {
                     fmt2.format("Distance: %.2f",results[0]/1000);
-                    tDistance.setText("Distance: " + builder2.toString()+ "km");
+                    tDistance.setText("" + builder2.toString()+ "km");
                 } else{
-                    tDistance.setText("Distance: " + builder.toString() + "m");
+                    tDistance.setText("" + builder.toString() + "m");
                 }
                 return view;
             }
