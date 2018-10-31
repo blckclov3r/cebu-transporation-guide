@@ -1,5 +1,4 @@
 package com.blckclov3r.cebu_mproject.mSplashscreen;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +13,8 @@ import com.fujiyuu75.sequent.Animation;
 import com.fujiyuu75.sequent.Sequent;
 import spencerstudios.com.bungeelib.Bungee;
 
-import static com.blckclov3r.cebu_mproject.mMainActivity.MainActivity.fa;
-
 /**
- * Created by Abrenica, Aljun on 8/16/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class SplashScreen extends AppCompatActivity {

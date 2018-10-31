@@ -3,7 +3,7 @@ package com.blckclov3r.cebu_mproject.mMisc;
 import android.util.Log;
 
 /**
- * Created by admin on 8/6/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class Shared_Pref {

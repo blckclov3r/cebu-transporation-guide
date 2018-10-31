@@ -22,7 +22,7 @@ import in.codeshuffle.typewriterview.TypeWriterView;
 import static android.content.Context.MODE_PRIVATE;
 
 /**
- * Created by admin on 7/25/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class home_fragment extends Fragment {

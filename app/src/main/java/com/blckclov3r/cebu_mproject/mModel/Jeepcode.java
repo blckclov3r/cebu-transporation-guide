@@ -1,7 +1,7 @@
 package com.blckclov3r.cebu_mproject.mModel;
 
 /**
- * Created by Abrenica, Aljun on 8/15/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class Jeepcode {
@@ -9,6 +9,24 @@ public class Jeepcode {
     private String code = "";
     private String desc = "";
     private String togo = "";
+
+    public Jeepcode(){}
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public String getTogo() {
         return togo;

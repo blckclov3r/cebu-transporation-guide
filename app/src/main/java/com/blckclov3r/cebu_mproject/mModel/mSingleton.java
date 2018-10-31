@@ -6,7 +6,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
 /**
- * Created by Abrenica, Aljun on 8/15/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class mSingleton {

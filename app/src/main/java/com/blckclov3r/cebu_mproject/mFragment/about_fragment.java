@@ -23,7 +23,7 @@ import com.fujiyuu75.sequent.Sequent;
 import in.codeshuffle.typewriterview.TypeWriterView;
 
 /**
- * Created by Abrenica, Aljun on 7/25/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class about_fragment extends Fragment {

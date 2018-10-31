@@ -12,16 +12,11 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.blckclov3r.cebu_mproject.R;
-import com.blckclov3r.cebu_mproject.mFragment.jeep_fragment;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
-import com.blckclov3r.cebu_mproject.mMainActivity.MainActivity;
 import com.fujiyuu75.sequent.Animation;
 import com.fujiyuu75.sequent.Sequent;
-
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import es.dmoral.toasty.Toasty;
 import in.codeshuffle.typewriterview.TypeWriterView;
 import spencerstudios.com.bungeelib.Bungee;
 
@@ -78,14 +73,15 @@ public class JeepInfo extends AppCompatActivity {
         two = (LinearLayout) findViewById(R.id.two);
         one = (LinearLayout) findViewById(R.id.one);
         head_ = (LinearLayout) findViewById(R.id.head_);
-
         tv_title = (TypeWriterView) findViewById(R.id.tv_title);
+        Intent intent = getIntent();
+        final String code = intent.getStringExtra("code");
+        final String desc = intent.getStringExtra("desc");
+//        jeepCode.setText(MainActivity.code);
+//        jeepDesc.setText(MainActivity.desc);
 
-//        Intent intent = getIntent();
-//        final String code = intent.getStringExtra("code");
-//        final String desc = intent.getStringExtra("desc");
-        jeepCode.setText(MainActivity.code);
-        jeepDesc.setText(MainActivity.desc);
+        jeepCode.setText(code);
+        jeepDesc.setText(desc);
 
         sharedPreferences = getApplicationContext().getSharedPreferences(option_fragment.MY_PREF,MODE_PRIVATE);
         getBackgroundTheme();

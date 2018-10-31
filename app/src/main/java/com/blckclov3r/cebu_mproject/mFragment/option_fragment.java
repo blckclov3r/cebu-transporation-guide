@@ -25,7 +25,7 @@ import com.fujiyuu75.sequent.Sequent;
 import in.codeshuffle.typewriterview.TypeWriterView;
 
 /**
- * Created by Abrenica, Aljun on 8/6/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class option_fragment extends Fragment {

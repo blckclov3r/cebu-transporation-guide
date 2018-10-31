@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Abrenca, Aljun on 7/26/2018.
+ * Created by Abrenica, Aljun
  */
 
 public class GetNearbyPlacesData extends AsyncTask<Object,String,String>{

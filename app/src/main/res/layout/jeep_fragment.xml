@@ -48,8 +48,25 @@
                 android:id="@+id/eBrain"
                 android:layout_width="0dp"
                 android:layout_height="0dp" />
-        </LinearLayout>
 
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="#eee"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                app:queryHint="Search . . ."
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

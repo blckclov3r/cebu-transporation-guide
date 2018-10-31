@@ -1,4 +1,5 @@
 package com.blckclov3r.cebu_mproject.mMainActivity;
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -42,7 +43,9 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
+
 import java.util.Formatter;
+
 import es.dmoral.toasty.Toasty;
 
 /**
@@ -583,9 +586,9 @@ public class Map_ extends Fragment implements OnMapReadyCallback,
 
                 if (results[0] >= 1000) {
                     fmt2.format("Distance: %.2f",results[0]/1000);
-                    tDistance.setText("" + builder2.toString()+ "km");
+                    tDistance.setText("Distance: " + builder2.toString()+ "km");
                 } else{
-                    tDistance.setText("" + builder.toString() + "m");
+                    tDistance.setText("Distance: " + builder.toString() + "m");
                 }
                 return view;
             }
