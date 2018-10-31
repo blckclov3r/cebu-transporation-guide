@@ -78,7 +78,6 @@ public class DBHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM "+dbKey.TABLENAME;
         return db.rawQuery(query,null);
     }
-
     public void deleteList(){
         SQLiteDatabase db  = this.getWritableDatabase();
         db.execSQL("DROP TABLE "+dbKey.TABLENAME);
