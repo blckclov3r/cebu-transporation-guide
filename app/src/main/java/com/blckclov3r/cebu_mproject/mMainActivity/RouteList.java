@@ -1,27 +1,27 @@
 package com.blckclov3r.cebu_mproject.mMainActivity;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+
 import com.blckclov3r.cebu_mproject.mDatabase.DBHelper;
 import com.blckclov3r.cebu_mproject.mModel.Jeepcode;
 
 public class RouteList {
-    private static RouteList obj;
+    private static RouteList obj = null;
     DBHelper dbHelper;
     Context context;
-    private RouteList(){}
 
-    public static RouteList getInstance(){
-        if(obj == null){
-            synchronized (RouteList.class){
-                if(obj == null){
-                    obj = new RouteList();
-                }
-            }
+    private RouteList() {
+    }
+
+    public static RouteList getInstance() {
+        if (obj == null) {
+            obj = new RouteList();
         }
         return obj;
     }
 
-    public void display(Context context){
+    public void display(Context context) {
         this.context = context;
         dbHelper = new DBHelper(context);
         dbHelper.jeepCodeData(new Jeepcode("01B", "* Sambag 1 to Pier 3 & 2 via Colon St.\n" +

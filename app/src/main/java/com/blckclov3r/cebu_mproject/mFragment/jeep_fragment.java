@@ -103,6 +103,7 @@ public class jeep_fragment extends Fragment {
         mAdapter.setOnItemClickListener(new JeepAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+
                 String jcode = "";
                 String jdesc = "";
                 Cursor cursor = dbHelper.getPositionId(position+1);
@@ -116,12 +117,11 @@ public class jeep_fragment extends Fragment {
                 dbHelper.close();
                 listener.sendInfo(jcode,jdesc);
                 Intent intent = new Intent(getActivity(),JeepInfo.class);
-//                intent.putExtra("code",jcode);
-//                intent.putExtra("desc",jdesc);
+                intent.putExtra("code",jcode);
+                intent.putExtra("desc",jdesc);
                 getActivity().startActivity(intent);
                 Bungee.slideUp(getActivity());
             }
-
         });
     }
 

@@ -184,16 +184,16 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages AndroidView="true" />
       <showMembers AndroidView="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,12 +486,12 @@
       <window_info anchor="bottom" id="Android Monitor" order="3" sideWeight="0.49046105" weight="0.47049442" />
       <window_info id="Captures" order="2" weight="0.24960254" />
       <window_info anchor="right" id="Dynamic Properties" order="10" />
-      <window_info anchor="right" id="Gradle" order="8" side_tool="true" weight="0.2344992" />
       <window_info anchor="right" id="Preview" order="2" weight="0.33147854" />
       <window_info anchor="right" x="156" y="92" width="1118" height="584" id="Documentation" order="7" side_tool="true" type="FLOATING" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="right" id="Android Model" order="9" weight="0.3298887" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32854864" />
+      <window_info anchor="right" id="Android Model" order="9" weight="0.3298887" />
+      <window_info anchor="right" id="Gradle" order="8" side_tool="true" weight="0.2344992" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.33492824" />
       <window_info anchor="bottom" id="Message" order="6" />

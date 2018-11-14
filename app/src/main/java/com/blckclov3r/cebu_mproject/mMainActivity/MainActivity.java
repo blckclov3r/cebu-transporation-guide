@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity
             dbHelper.deleteList();
         }
         cursor.close();
+
         dbJeepList();
         dbHelper.close();
     }
