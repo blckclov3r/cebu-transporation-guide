@@ -19,12 +19,13 @@ import android.widget.Toast;
 
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mDatabase.DBHelper;
-import com.blckclov3r.cebu_mproject.mMainActivity.MainActivity;
 import com.blckclov3r.cebu_mproject.mModel.Jeepcode;
 import com.blckclov3r.cebu_mproject.mRecyclerView.JeepAdapter;
 import com.blckclov3r.cebu_mproject.mRecyclerView.JeepInfo;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import in.codeshuffle.typewriterview.TypeWriterView;
 import spencerstudios.com.bungeelib.Bungee;
 

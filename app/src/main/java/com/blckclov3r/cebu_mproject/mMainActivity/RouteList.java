@@ -1,7 +1,6 @@
 package com.blckclov3r.cebu_mproject.mMainActivity;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.blckclov3r.cebu_mproject.mDatabase.DBHelper;
 import com.blckclov3r.cebu_mproject.mModel.Jeepcode;

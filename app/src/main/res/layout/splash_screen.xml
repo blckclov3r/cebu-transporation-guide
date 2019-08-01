@@ -48,7 +48,6 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
-                        android:id="@+id/status_"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -78,7 +77,6 @@
                         >
 
                         <ImageView
-                            android:id="@+id/jeepLogo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@drawable/my_logo" />
@@ -98,7 +96,6 @@
                 android:padding="4dp">
 
                 <TextView
-                    android:id="@+id/cebu_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -119,7 +116,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/ctg_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-7dp"
@@ -159,7 +155,6 @@
 
 
                     <ImageView
-                        android:id="@+id/imageView3"
                         android:layout_width="160dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"

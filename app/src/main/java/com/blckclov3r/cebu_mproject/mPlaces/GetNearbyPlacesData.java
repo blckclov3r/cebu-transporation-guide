@@ -1,6 +1,5 @@
 package com.blckclov3r.cebu_mproject.mPlaces;
 
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.CameraUpdateFactory;

@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0678e7</color>
     <color name="colorPrimaryDark">#006699</color>
-    <color name="colorAccent">#006699</color>
-    <color name="colorWhite">#f3f3f3</color>
-    <color name="transparent">#fff</color>
-    <color name="colorDark">#333</color>
     <color name="colorBlue">#006699</color>
     <color name="lightSalmon">#ffa07a</color>
     <color name="black">#333</color>
-    <color name="corn">#ffffec</color>
-    <color name="Cornsilk">#ffffe4</color>
-    <color name="darkCorn">#f7f0d4</color>
     <color name="whiteSmoke">#fff</color>
-    <color name="tomato">#ff6347</color>
-    <color name="salmon">#fa8072</color>
-    <color name="skyblue">#7FA6D5</color>
     <color name="darkBlue">#00558B</color>
     <color name="gray">#ccc</color>
-    <color name="dark">#777</color>
     <color name="lightGray">#eee</color>
 </resources>

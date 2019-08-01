@@ -1,4 +1,5 @@
 package com.blckclov3r.cebu_mproject.mSplashscreen;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +8,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.LinearLayout;
+
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mMainActivity.MainActivity;
 import com.fujiyuu75.sequent.Animation;
 import com.fujiyuu75.sequent.Sequent;
+
 import spencerstudios.com.bungeelib.Bungee;
 
 /**

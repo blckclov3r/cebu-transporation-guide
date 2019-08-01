@@ -40,7 +40,6 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/eBrain"
             android:layout_width="0dp"
             android:layout_height="0dp" />
     </LinearLayout>
@@ -110,7 +109,6 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/imageView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fitsSystemWindows="true"

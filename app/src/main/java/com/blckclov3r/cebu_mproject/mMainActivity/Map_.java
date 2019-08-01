@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
 import com.blckclov3r.cebu_mproject.mModel.mSingleton;

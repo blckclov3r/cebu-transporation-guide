@@ -1,7 +1,5 @@
 package com.blckclov3r.cebu_mproject.mPlaces;
 
-import android.os.Handler;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

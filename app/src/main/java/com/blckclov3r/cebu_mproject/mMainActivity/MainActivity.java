@@ -1,4 +1,5 @@
 package com.blckclov3r.cebu_mproject.mMainActivity;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -23,17 +24,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
+
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mDatabase.DBHelper;
 import com.blckclov3r.cebu_mproject.mFragment.about_fragment;
 import com.blckclov3r.cebu_mproject.mFragment.home_fragment;
 import com.blckclov3r.cebu_mproject.mFragment.jeep_fragment;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
-import com.blckclov3r.cebu_mproject.mModel.Jeepcode;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+
 import java.io.File;
 import java.util.ArrayList;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
 
@@ -69,14 +72,7 @@ public class MainActivity extends AppCompatActivity
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -113,13 +109,6 @@ public class MainActivity extends AppCompatActivity
         dbJeepList();
         dbHelper.close();
     }
-
-//    public void nav_background() {
-//        if (dState) {
-//            navigationView.setBackgroundColor(Color.rgb(230, 230, 230));
-//            navigationView.setItemTextColor(ColorStateList.valueOf(Color.rgb(33, 33, 33)));
-//        }
-//    }
 
     @Override
     protected void onRestart() {

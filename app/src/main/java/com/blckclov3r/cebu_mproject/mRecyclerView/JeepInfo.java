@@ -3,19 +3,21 @@ package com.blckclov3r.cebu_mproject.mRecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.blckclov3r.cebu_mproject.R;
 import com.blckclov3r.cebu_mproject.mFragment.option_fragment;
 import com.fujiyuu75.sequent.Animation;
 import com.fujiyuu75.sequent.Sequent;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import in.codeshuffle.typewriterview.TypeWriterView;
 import spencerstudios.com.bungeelib.Bungee;
